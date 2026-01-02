@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background: #1c1c1a;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: beige
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.modal img {
+    max-width: 70vw;
+    max-height: 60vh;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-btn {
+    font-size: 1.8rem;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-btn {
+    left: 2vw;
+}
+
+.next-btn {
+    right: 2vw;
+}
+
+.back-btn {
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    font-size: 1.8rem;
+    color: white;
+    border: none;
+    background: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.toolbar {
+    width: 100%;
+    height: 5vh;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .modal img {
+        max-width: 80vw;
+        max-height: 50vh;
+    }
+
+    .nav-btn {
+        font-size: 1.5rem;
+    }
+
+    .back-btn {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal img {
+        max-width: 85vw;
+        max-height: 45vh;
+    }
+
+    .nav-btn {
+        font-size: 1.2rem;
+    }
+
+    .prev-btn {
+        left: 1vw;
+    }
+
+    .next-btn {
+        right: 1vw;
+    }
+
+    .back-btn {
+        font-size: 1.2rem;
+        top: 1vh;
+        left: 1vw;
+    }
+}

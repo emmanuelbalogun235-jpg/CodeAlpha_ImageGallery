@@ -12,7 +12,16 @@
 
     <h1>Image Gallery</h1>
 
-    <div class="gallery"></div>
+    <div class="gallery">
+        <!-- 100 Random Images -->
+        <!-- Using ?random=1 to ?random=100 -->
+        <!-- JS will handle modal & swipe -->
+        <script>
+            for (let i = 1; i <= 100; i++) {
+                document.write(`<img src="https://picsum.photos/400/300?random=${i}" alt="Image ${i}">`);
+            }
+        </script>
+    </div>
 
     <div id="modal" class="modal">
         <button id="back-btn" class="back-btn">&#x2BC6;</button>

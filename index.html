@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery | CodeAlpha</title>
+    <title>Image Gallery | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,50 +12,25 @@
 
     <h1>Image Gallery</h1>
 
-    <div class="gallery">
-        <!-- 25 Random Pics -->
-        <img src="https://picsum.photos/400/300?random=1">
-        <img src="https://picsum.photos/400/300?random=2">
-        <img src="https://picsum.photos/400/300?random=3">
-        <img src="https://picsum.photos/400/300?random=4">
-        <img src="https://picsum.photos/400/300?random=5">
-        <img src="https://picsum.photos/400/300?random=6">
-        <img src="https://picsum.photos/400/300?random=7">
-        <img src="https://picsum.photos/400/300?random=8">
-        <img src="https://picsum.photos/400/300?random=9">
-        <img src="https://picsum.photos/400/300?random=10">
-        <img src="https://picsum.photos/400/300?random=11">
-        <img src="https://picsum.photos/400/300?random=12">
-        <img src="https://picsum.photos/400/300?random=13">
-        <img src="https://picsum.photos/400/300?random=14">
-        <img src="https://picsum.photos/400/300?random=15">
-        <img src="https://picsum.photos/400/300?random=16">
-        <img src="https://picsum.photos/400/300?random=17">
-        <img src="https://picsum.photos/400/300?random=18">
-        <img src="https://picsum.photos/400/300?random=19">
-        <img src="https://picsum.photos/400/300?random=20">
-        <img src="https://picsum.photos/400/300?random=21">
-        <img src="https://picsum.photos/400/300?random=22">
-        <img src="https://picsum.photos/400/300?random=23">
-        <img src="https://picsum.photos/400/300?random=24">
-        <img src="https://picsum.photos/400/300?random=25">
-    </div>
-
+    <!-- Gallery -->
+    <div class="gallery"></div>
     <!-- Modal -->
     <div id="modal" class="modal">
-        <button id="back-btn" class="back-btn">&#x2BC6;</button>
-        <span class="counter" id="counter">1 / 25</span>
+        <!-- Back button as triangle/V -->
+        <button id="back-btn" class="back-btn"></button>
+        <!-- Image in modal -->
         <img id="modal-img" src="" alt="Selected Image">
+
+        <!-- Navigation -->
         <button id="prev" class="nav-btn prev-btn">&#x276E;</button>
         <button id="next" class="nav-btn next-btn">&#x276F;</button>
-        <div class="toolbar">
-            <span title="Edit">&#9998;</span>
-            <span title="Info / Download">&#128196;</span>
-            <span title="Delete">&#128465;</span>
+        <div id="counter" class="counter"></div>
+        <div id="toolbar" class="toolbar">
+            <span id="filter" title="Filter"> &#9675; &#9675; &#9675;</span>
+            <span id="info" title="Info">&#x2139;</span>
+            <span id="delete" title="Delete">&#x1F5D1;</span>
         </div>
     </div>
-    <div id="loader" class="loader">Loading...</div>
-
 
     <script src="script.js"></script>
 </body>

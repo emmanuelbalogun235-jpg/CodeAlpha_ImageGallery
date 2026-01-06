@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery | Portfolio</title>
+    <title>Image Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,25 +12,43 @@
 
     <h1>Image Gallery</h1>
 
-    <!-- Gallery -->
     <div class="gallery"></div>
+
     <!-- Modal -->
     <div id="modal" class="modal">
-        <!-- Back button as triangle/V -->
         <button id="back-btn" class="back-btn"></button>
-        <!-- Image in modal -->
-        <img id="modal-img" src="" alt="Selected Image">
 
-        <!-- Navigation -->
+        <img id="modal-img" alt="">
+
         <button id="prev" class="nav-btn prev-btn">&#x276E;</button>
         <button id="next" class="nav-btn next-btn">&#x276F;</button>
-        <div id="counter" class="counter"></div>
+
+        <!-- Filter Palette -->
+        <div id="filter-palette" class="filter-palette">
+            <div class="filters">
+                <button class="filter-option" data-filter="normal">Normal</button>
+                <button class="filter-option" data-filter="grayscale">Grayscale</button>
+                <button class="filter-option" data-filter="sunny">Sunny</button>
+                <button class="filter-option" data-filter="cool">Cool</button>
+                <button class="filter-option" data-filter="vintage">Vintage</button>
+            </div>
+            <button id="filter-confirm" class="filter-confirm">✔</button>
+        </div>
+
+        <!-- Modal Toolbar -->
         <div id="toolbar" class="toolbar">
-            <span id="filter" title="Filter"> &#9675; &#9675; &#9675;</span>
-            <span id="info" title="Info">&#x2139;</span>
-            <span id="delete" title="Delete">&#x1F5D1;</span>
+            <span id="filter">&#9675; &#9675; &#9675;</span>
+            <span id="delete">🗑</span>
         </div>
     </div>
+    <div id="category-palette" class="category-palette">
+        <button data-category="all">All</button>
+        <button data-category="nature">Nature</button>
+        <button data-category="urban">Urban</button>
+        <button data-category="people">People</button>
+        <button data-category="abstract">Abstract</button>
+    </div>
+
 
     <script src="script.js"></script>
 </body>

@@ -15,7 +15,6 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-/* Gallery */
 .gallery {
     display: flex;
     flex-direction: column;
@@ -23,7 +22,6 @@ h1 {
 }
 
 .gallery h2 {
-    text-align: left;
     font-size: 1.2rem;
 }
 
@@ -39,9 +37,14 @@ h1 {
     object-fit: cover;
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Modal */
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.35);
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -59,7 +62,6 @@ h1 {
     border-radius: 0.5rem;
 }
 
-/* Back button */
 .back-btn {
     position: fixed;
     top: 1.5rem;
@@ -84,7 +86,6 @@ h1 {
     margin: auto;
 }
 
-/* Navigation */
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -133,81 +134,63 @@ h1 {
     opacity: 0.85;
 }
 
-/* Filter Palette */
-.filter-palette {
-    position: absolute;
-    bottom: 8vh;
-    width: 100%;
-    background: rgba(30, 30, 30, 0.95);
-    padding: 0.8rem;
+#filter-palette {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: none;
-    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    background: rgba(20, 20, 20, 0.95);
+    border-radius: 10px;
+    z-index: 1003;
+
+    max-width: 95vw;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
-.filters {
-    display: flex;
-    gap: 0.5rem;
+#filter-palette::-webkit-scrollbar {
+    display: none;
 }
 
 .filter-option {
-    padding: 0.3rem 0.6rem;
-    border-radius: 0.4rem;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.1);
-    color: aliceblue;
-    cursor: pointer;
-}
-
-.filter-option.active {
-    background: aliceblue;
-    color: #111;
-}
-
-.filter-confirm {
+    flex: 0 0 auto;
     padding: 0.4rem 0.7rem;
-    border: none;
-    border-radius: 0.4rem;
-    cursor: pointer;
+    font-size: 0.85rem;
+    border-radius: 6px;
 }
 
-@media (max-width: 480px) {
-    .date-group {
-        grid-template-columns: repeat(2, 1fr);
-    }
+#filter-confirm {
+    flex: 0 0 auto;
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
 }
 
-/* Category Palette */
+
 .category-palette {
     position: fixed;
-    right: 1rem;
+    left: 50%;
     bottom: 1.5rem;
-    background: rgba(25, 25, 25, 0.9);
+    transform: translateX(-50%);
+    background: rgba(25, 25, 25, 0.92);
     border-radius: 1rem;
-    padding: 0.5rem;
+    padding: 0.6rem 0.8rem;
     display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    gap: 0.5rem;
     z-index: 998;
-}
-
-.category-palette.show {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
 }
 
 .category-palette button {
     background: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: aliceblue;
-    padding: 0.35rem 0.6rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 0.6rem;
     cursor: pointer;
     font-size: 0.8rem;
+    white-space: nowrap;
 }
 
 .category-palette button.active {
@@ -215,14 +198,19 @@ h1 {
     color: #111;
 }
 
-/* Hover effects for gallery images */
-.gallery img,
-.date-group img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+@media (max-width: 600px) {
+    .date-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.gallery img:hover,
-.date-group img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+    .category-palette {
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90vw;
+    }
+
+    .category-palette button {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.55rem;
+    }
 }
